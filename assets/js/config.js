@@ -1,0 +1,17 @@
+/* Pattern Grid — deployment configuration (no secrets belong here).
+   formEndpoint: the HTTPS URL that receives enquiry POSTs as JSON
+     { name, email, organisation, message, role?, service?, process?, time?, optin, assessment? }
+     and answers 200 (JSON { ok: true }), 422 (JSON { errors: { field: message } })
+     or another status for failure. Leave empty until an approved destination
+     exists: the contact page then shows an honest "not open yet" state instead
+     of a form that discards enquiries. See docs/ux/contact-integration.md.
+   contactEmail: a verified business mailbox. With no formEndpoint, the form
+     opens the visitor's mail app with the enquiry drafted to this address
+     (no server needed). Leave both empty and the page says the form is not
+     open yet.
+   The dev server (tools/serve.js) overrides this file with a local mock. */
+window.PG_CONFIG = {
+  formEndpoint: '',
+  contactEmail: ''
+};
+window.PG_CONFIG.staging = {"branch":"staging","commit":"d8e153d","builtAt":"2026-11-19T18:44:10.617Z"};

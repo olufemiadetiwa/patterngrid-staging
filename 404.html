@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Pattern Grid</title>
+<meta name="robots" content="noindex">
+<script>
+  /* Static hosts serve this file for any unknown path. Hand the requested
+     path back to the app so deep links resolve without a visible bounce. */
+  (function () {
+    var base = /\.github\.io$/.test(location.hostname) ? '/' + (location.pathname.split('/')[1] || '') : '';
+    if (base === '/') base = '';
+    try { sessionStorage.setItem('pg-redirect', location.pathname.slice(base.length) + location.search); } catch (e) {}
+    location.replace(base + '/');
+  })();
+</script>
+</head>
+<body>
+<noscript><p>Page not found. <a href="/">Return to the Pattern Grid home page</a>.</p></noscript>
+</body>
+</html>
